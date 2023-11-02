@@ -23,7 +23,8 @@ def run_tracker_in_thread(filename, model, file_index):
 
     SUMISSION = ".\submission1"
     path = filename.replace('.mp4', '')
-    path = filename.replace('Video_Phase1\\','')
+    path = path.replace('Video_Phase1\\','')
+    print(path)
     save_path = os.path.join(SUMISSION,path)
     file_txt = open(save_path + ".txt","w")
 
@@ -83,9 +84,6 @@ def run_tracker_in_thread(filename, model, file_index):
                 res = f"{no_frame},{trackid},{bb_x_top_left:.2f},{bb_y_top_left:.2f},{bb_width:.2f},{bb_height:.2f},{gender},{age}"
                 print(res)
                 file_txt.write(res + "\n")
-
-            res_plotted = results[0].plot()
-            cv2.imshow(f"Tracking_Stream_{file_index}", res_plotted)
 
             key = cv2.waitKey(1)
             if key == ord('q'):
