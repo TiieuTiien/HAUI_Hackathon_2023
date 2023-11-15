@@ -1,4 +1,9 @@
+.vscode/*
+!.vscode/settings.json
 /Video_Phase1
 yolov8n.pt
 yolov8m.pt
 yolov7.pt
+Submission
+submission1
+submission2
